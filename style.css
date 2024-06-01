@@ -1,0 +1,933 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: red;
+    border-radius: 5px;
+}
+
+
+body {
+    background-color: #FFF9DB;
+    color: rgb(32, 32, 32);
+    font-family: "Poppins", sans-serif;
+}
+
+#hero {
+    background: url(assets/images/hero-bg.jpg);
+    height: 115vh;
+background-repeat: no-repeat;
+    width: 100%;
+    color: white;
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background-position: top;
+    background-size: 100%;
+}
+
+#hero nav {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    padding: 2vmin 8vmin;
+    z-index: 99;
+}
+
+#hero__icon {
+    font-family: "Dancing Script", cursive;
+    color: gold;
+    font-weight: 100;
+    font-size: 5vmin;
+    text-decoration: none;
+}
+
+#hero details{
+    display: flex;
+    text-align: center;
+    cursor: pointer;
+    position: fixed;
+    top: 2vmin;
+    right: 8vmin;
+}
+#hero details a{
+    padding: 1vmin 2vmin;
+    font-size: 2.5vmin;
+    background-color: #FFE3AF;
+    color: #111;
+    opacity: 80%;
+}
+#hero details img{
+    height: 3.5vmin;
+}
+#hero details a:nth-last-child(1){
+    border-radius:0 0 30px 30px;
+    padding-bottom: 3vmin;
+}
+#hero details a:nth-last-child(6){
+    border-radius:30px 30px 0 0;
+    padding-top: 3vmin;
+}
+#hero summary{
+    background-color: #EFC06A;
+    border-radius: 30px;
+    padding: 1.2vmin 3vmin;
+    font-size: 2.8vmin;
+    font-weight: 600;
+    list-style: none;
+    margin-bottom: 1vmin;
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1vmin;
+    
+}
+
+#hero h1 {
+    font-size: 10vmin;
+    text-align: center;
+    padding: 7vmin;
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.473);
+    border-radius: 5vmin;
+}
+
+#hero span {
+    font-family: "Dancing Script", cursive;
+    color: gold;
+    font-weight: 100;
+    font-size: 20vmin;
+}
+
+#hero>a {
+    height: 15vmin;
+    width: 15vmin;
+    z-index: 1;
+    background: none;
+    border: none;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.473);
+    text-decoration: underline;
+    font-size: 2vmin;
+    font-weight: 300;
+    border-radius: 50%;
+transform: translateY(-15vh);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#hero>a img {
+    height: 3.5vmin;
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }    
+}
+
+
+/* description 👇*/
+#description {
+    height: 100vh;
+    padding: 10vmin;
+}
+
+#quote {
+    width: 55vw;
+    background-color: #FFE3AF;
+    padding: 7vmin;
+    padding-left: 15vmin;
+}
+
+#quote div {
+    height: 0.4vmin;
+    width: 10vmin;
+    background-color: red;
+    transform: translate(-60px, 15px) rotate(-75deg);
+}
+
+#quote__p {
+    font-weight: 600;
+    font-family: "Patrick Hand SC", cursive;
+    font-size: 3vmin;
+}
+
+#description__p {
+    text-align: left;
+    margin-top: 15vh;
+    font-size: 2.5vmin;
+}
+
+
+/* map 👇 */
+#map {
+    height: 100vh;
+    position: relative;
+}
+
+#map__location {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+#map__img {
+    height: 500px;
+}
+
+
+/* map pins */
+.map__pin {
+    height: 30px;
+    position: absolute;
+
+}
+
+.pOne{
+    animation: floating1 2s ease-in-out infinite;
+    transform: translate(150px, -85px);
+
+}
+@keyframes floating1 { 
+    50%  { transform: translate(150px, -90px); }
+}
+.pTwo {
+    animation: floating2 2s ease-in-out infinite;
+}
+
+@keyframes floating2 {
+    50%  { transform: translate(0px, -5px); }
+}
+
+.pThree {
+    transform: translate(230px, -150px);
+    animation: floating3 2s ease-in-out infinite;
+}
+@keyframes floating3 {
+    50%  { transform: translate(230px, -155px); }
+}
+
+/* lines of map */
+#lines {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.line {
+    height: 1.5px;
+    width: 400px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+}
+
+.lineOne {
+    transform: translate(-200px, 13px);
+}
+
+.lineTwo {
+    width: 300px;
+    transform: translate(300px, -72px) rotate(30deg);
+    transform-origin: left;
+}
+
+.lineThree {
+    width: 200px;
+    transform: translate(330px, -137px) rotate(-10deg);
+    transform-origin: left;
+}
+
+/* country Images */
+
+#country__images {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+#country__images div img:hover ~  p { 
+    color: red;
+}
+
+#country__images div {
+    position: absolute;
+}
+
+#country__images img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: red solid 2px;
+    background-position: center;
+    object-fit: cover;
+}
+
+#country__images p {
+    text-align: center;
+    font-size: 4vmin;
+    font-weight: 700;
+    text-decoration: underline;
+    cursor: default;
+}
+
+#iranImg {
+    transform: translate(-450px, 30px);
+}
+
+#tajiImg {
+    transform: translate(500px, -172px);
+}
+
+#afghImg {
+    transform: translate(430px, 117px);
+}
+
+#hidder {
+    height: 40px;
+    width: 40px;
+    background-color: #FFF9DB;
+    transform: translate(290px, 195px);
+}
+
+/* css of Countries 👇 */
+
+/* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
+
+#countries {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: -10vmin;
+}
+
+#countries img {
+    height: 55vmin;
+    width: 40vmin;
+    clip-path: polygon(0 14%, 100% 0%, 100% 85%, 0% 100%);
+    object-fit: cover;
+
+}
+
+#countries h3 {
+    text-align: center;
+    background-color: red;
+    color: white;
+    width: fit-content;
+    padding: 0 4vmin;
+    clip-path: polygon(15% 0, 100% 0%, 85% 100%, 0% 100%);
+    font-size: 3vmin;
+}
+
+#countries p {
+    width: 40vmin;
+    padding: 2vmin;
+    font-size: 2vmin;
+}
+
+/* css of information */
+#information h2 {
+    text-align: center;
+    font-size: 8vmin;
+}
+
+#info__divider {
+    padding: 10vmin 25vmin;
+    display: flex;
+    justify-content: center;
+    gap: 10vw;
+}
+
+
+
+#info__divider img {
+    height: 80vmin;
+    width: 80vmin;
+    object-fit: cover;
+    background-position: center;
+    position: sticky;
+    top: 10%;
+    border-radius: 5vmin;
+    animation: shake 5s ease infinite both;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+
+#info__divider h3 {
+    font-size: 4.5vmin;
+    color: red;
+    margin-bottom: 5vmin;
+}
+
+#info__divider p {
+    font-size: 3vmin;
+    margin-bottom: 10vmin;
+}
+
+/* css of details */
+
+#details {
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#details h2 {
+    font-size: 8vmin;
+    margin-bottom: 10vh;
+}
+
+#details__divider {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2.5vw;
+    margin: 0 15vmin;
+}
+
+#details__divider img {
+    border-radius: 10%;
+}
+
+#details__divider details {
+    margin: 3vh;
+    width: 30vw;
+}
+
+#details__divider summary {
+    background-color: #EFC06A;
+    border-radius: 30px;
+    padding: 1.5vmin 4vmin;
+    font-size: 2.8vmin;
+    font-weight: 600;
+    list-style: none;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#details__divider p {
+    padding: 1vmin 4vmin;
+    font-size: 2vmin;
+}
+
+#details__divider summary img {
+    height: 4vmin;
+    transition: all 0.4s ease;
+}
+
+
+
+/* css game section */
+#game {
+    height: 100vh;
+    padding-top: 5vh;
+}
+
+#game h2 {
+    font-size: 8vmin;
+    text-align: center;
+}
+
+#game>p {
+    font-size: 3vmin;
+    text-align: center;
+    padding: 2vh 10vw;
+}
+
+#gameMatchers {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#gameMatchers>div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 60vh;
+    gap: 4vmin;
+}
+
+#draggable-elements {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: calc(2vh + 5px);
+}
+
+.draggable {
+    font-size: 4vmin;
+    text-align: center;
+    width: 20vw;
+    padding: 1vmin;
+    border-radius: 5vmin;
+    cursor: move;
+    transition: opacity 0.2s;
+}
+
+.draggable:hover {
+    opacity: 0.5;
+}
+
+#gameMatchers hr {
+    border: #111 solid 1px;
+    height: 80%;
+}
+
+#droppable-elements {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2vh;
+}
+
+.droppable {
+    font-size: 4vmin;
+    text-align: center;
+    width: 20vw;
+    padding: 1vmin;
+    border-radius: 5vmin;
+    font-weight: 600;
+    background-color: #fff;
+    border: 3px dashed #111;
+    transition: border-width 0.2s, transform 0.2s, background-color 0.4s;
+}
+
+
+/* Drag and Drop Related Styling */
+
+.droppable.droppable-hover {
+    border-width: 5px;
+    transform: scale(1.1);
+}
+
+.droppable.dropped {
+    border-style: solid;
+    color: #fff;
+}
+
+.draggable.dragged {
+    user-select: none;
+    opacity: 0.5;
+    cursor: default;
+}
+
+.draggable.dragged:hover {
+    opacity: 0.1;
+}
+
+
+#gameMatchers img {
+    border-radius: 5vmin;
+    mix-blend-mode: difference;
+    filter: blur(5px) brightness(0.3) saturate(0) opacity(0.4);
+}
+
+
+/* css Footer  */
+
+footer p {
+    font-size: 2.5vmin;
+    text-align: center;
+    background-color: #EFC06A;
+    padding: 2vmin;
+}
+
+footer span {
+    color: red;
+    font-weight: 600;
+}
+
+
+
+/* responsiveness */
+
+@media (max-width: 820px) {
+    #hero {
+        height: 50vh;
+        width: 100vw;
+    }
+    #hero h1 {
+        margin-top: 7vh;
+        font-size: 5vmin;
+        padding: 3vmin;
+    }
+    
+    #hero span {
+        font-size: 10vmin;
+    }
+    #hero>a {
+        height: 15vmin;
+        width: 15vmin;
+
+    transform: translateY(-5vh);
+    
+
+    }
+    
+    #hero>a img {
+        height: 3.5vmin;
+        animation-name: floating;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+    
+
+    section {
+        padding: 10vmin;
+        height: fit-content;
+    }
+
+    #description {
+        height: fit-content;
+    }
+
+    #quote {
+        width: 100%;
+        padding-left: 10vmin;
+    }
+
+    #description__p {
+        margin-left: 0;
+        text-align: center;
+        font-size: 3.5vmin;
+    }
+
+
+    #map__img {
+        height: 250px;
+    }
+
+    #map {
+        padding: 0;
+        height: 50vh;
+    }
+
+    #country__images p {
+        font-size: 2vmin;
+    }
+    .pOne{
+        animation: none;
+        transform: translate(76px, -42px);
+    }
+    .pTwo {
+        transform: translate(0px, 0px);
+        animation: none;
+    }
+
+    .pThree {
+        transform: translate(115px, -80px);
+        animation: none;
+    }
+
+    /* lines of map */
+    .line {
+        width: 200px;
+    }
+
+    .lineOne {
+        transform: translate(-100px, 13px);
+    }
+
+    .lineTwo {
+        width: 150px;
+        transform: translate(150px, -30px) rotate(30deg);
+    }
+
+    .lineThree {
+        width: 100px;
+        transform: translate(165px, -68px) rotate(-10deg);
+    }
+
+    /* country Images */
+
+
+
+    #country__images img {
+        height: 100px;
+        width: 100px;
+    }
+
+    #iranImg {
+        transform: translate(-225px, 30px);
+    }
+
+    #tajiImg {
+        transform: translate(250px, -70px);
+    }
+
+    #afghImg {
+        transform: translate(215px, 60px);
+    }
+
+    #hidder {
+        height: 20px;
+        width: 20px;
+        background-color: #FFF9DB;
+        transform: translate(145px, 100px);
+        z-index: 1;
+    }
+
+
+    #countries {
+        flex-direction: column;
+        height: fit-content;
+    }
+
+    #countries img {
+        width: 100%;
+    }
+
+    #countries h3 {
+        font-size: 5vmin;
+    }
+
+    #countries p {
+        width: 90%;
+        font-size: 3vmin;
+    }
+
+
+    /* info */
+    #information {
+        height: fit-content;
+    }
+
+    #info__divider {
+        display: flex;
+        flex-direction: column;
+        gap: 10vh;
+        padding: 0;
+    }
+
+    #info__divider img {
+        height: 100%;
+        width: 100%;
+        top: 5%;
+    }
+
+    /* details */
+    #details {
+        height: fit-content;
+    }
+
+    #details__divider {
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    #details__divider img {
+        height: fit-content;
+        width: 100%;
+    }
+
+    #details__divider details {
+        margin: 3vmin 0;
+        width: 80vw;
+    }
+
+    #details__divider summary {
+        font-size: 4.5vmin;
+    }
+
+    #details__divider p {
+        font-size: 4vmin;
+    }
+
+    #details__divider summary img {
+        height: 5vmin;
+        width: fit-content;
+    }
+
+
+    /* game */
+    #game {
+        height: fit-content;
+    }
+
+    #game>p {
+        font-size: 4vmin;
+        padding: 2vh 5vw;
+    }
+
+    #gameMatchers {
+        flex-direction: column;
+    }
+
+    #gameMatchers>div {
+        gap: 0;
+    }
+
+    #draggable-elements {
+        gap: calc(1vh + 5px);
+    }
+
+    .draggable {
+        font-size: 5vmin;
+        width: 30vw;
+    }
+
+    #gameMatchers hr {
+        border: #111 solid 1px;
+        height: 50%;
+    }
+
+    #droppable-elements {
+        gap: 1vh;
+    }
+
+    .droppable {
+        font-size: 5vmin;
+        width: 30vw;
+    }
+
+    #gameMatchers img {
+        width: 100%;
+        margin-bottom: 5vh;
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    #hero h1{
+        margin-top: 0;
+    }
+
+    #hero>a {
+        transform: translateY(-10vh);
+    }
+
+    #map__img {
+        height: calc(250px - 10%);
+    }
+
+    #country__images p {
+        font-size: 2vmin;
+    }
+
+    .pOne {
+        transform: translate(0px, -25px);
+    }
+
+    .pTwo {
+        transform: translate(50px, -40.5px);
+    }
+
+    .pThree {
+        transform: translate(82px, -62px);
+    }
+
+    /* lines of map */
+    .line {
+        width: 100px;
+    }
+
+    .lineOne {
+        transform: translate(-32px, -50px) rotate(50deg);
+    }
+
+    .lineTwo {
+        width: 75px;
+        transform: translate(88px, -29px) rotate(60deg);
+    }
+
+    .lineThree {
+        width: 50px;
+        transform: translate(108px, -50px) rotate(-80deg);
+    }
+
+    /* country Images */
+
+
+
+    #country__images img {
+        height: 60px;
+        width: 60px;
+    }
+
+    #iranImg {
+        transform: translate(-75px, -90px);
+    }
+
+    #tajiImg {
+        transform: translate(100px, -120px);
+    }
+
+    #afghImg {
+        transform: translate(100px, 45px);
+        z-index: 2;
+    }
+
+    #hidder {
+        height: 20px;
+        width: 20px;
+        transform: translate(125px, 82px);
+        z-index: 1;
+    }
+}
